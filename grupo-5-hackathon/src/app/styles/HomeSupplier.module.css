@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.texto {
+    margin-top: 5rem;
+    text-align: center;
+    font-family: "Roboto", serif;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    gap: 2rem;
+}
+.card:hover{
+    background-color: grey;
+}
+.icons{
+    font-size: 3rem; /* Tamanho dos ícones */
+    margin-bottom: 0.25rem; /* Espaço entre ícone e texto */ 
+}
+
+.texto p{
+    color: #246A73;
+}

@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+.container {
+  font-family: "Roboto", serif;
+  background-color: white;
+  width: 80rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.211), 0 2px 14px rgba(0, 0, 0, 0.163);
+  margin-top: 2rem;
+  /* Aqui embaixo eu consigo fazer o espaço inferior entre o card e a tela inteira. Em cima troca o espaço em cima do card */
+  margin-bottom: 2rem;
+}
+.background {
+  background-color: #efdfdf;
+  padding: 1rem;
+}
