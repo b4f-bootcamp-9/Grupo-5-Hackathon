@@ -1,18 +1,16 @@
 import { NextResponse } from 'next/server';
-import { getMongoCollection } from '@/data/mongodb';  // Certifique-se de que o caminho está correto
+import { getMongoCollection } from '@/data/mongodb';
+import { ObjectId } from 'mongodb';
 
 export async function POST(request) {
   try {
-    const body = await request.json(); // Recebe os dados enviados via POST
-
+    const body = await request.json();
     const { nome, dia, ofertas, condicoes, evento, regras, imagem } = body;
 
-    // Verifica se todos os campos necessários foram preenchidos
     if (!nome || !dia || !ofertas || !condicoes || !evento || !regras || !imagem) {
       return NextResponse.json({ error: "Todos os campos são obrigatórios." }, { status: 400 });
     }
 
-    // Conexão com o MongoDB e inserção dos dados
     const collection = await getMongoCollection("meuBanco", "meuColecao");
     await collection.insertOne({
       nome,
@@ -25,7 +23,6 @@ export async function POST(request) {
       createdAt: new Date(),
     });
 
-    // Retorna uma resposta de sucesso
     return NextResponse.json({ message: "Dados enviados com sucesso!" });
 
   } catch (error) {
@@ -43,5 +40,33 @@ export async function GET() {
   } catch (error) {
     console.error('Erro ao buscar os dados:', error);
     return NextResponse.json({ error: "Erro ao buscar os dados." }, { status: 500 });
+  }
+}
+
+export async function DELETE(request) {
+  try {
+    const { id } = await request.json();
+    const collection = await getMongoCollection("meuBanco", "meuColecao");
+    await collection.deleteOne({ _id: new ObjectId(id) });
+
+    return NextResponse.json({ message: "Evento deletado com sucesso!" });
+  } catch (error) {
+    console.error('Erro ao deletar o evento:', error);
+    return NextResponse.json({ error: "Erro ao deletar o evento." }, { status: 500 });
+  }
+}
+
+export async function PATCH(request) {
+  try {
+    const body = await request.json();
+    const { id, ...updateData } = body;
+
+    const collection = await getMongoCollection("meuBanco", "meuColecao");
+    await collection.updateOne({ _id: new ObjectId(id) }, { $set: updateData });
+
+    return NextResponse.json({ message: "Evento atualizado com sucesso!" });
+  } catch (error) {
+    console.error('Erro ao atualizar o evento:', error);
+    return NextResponse.json({ error: "Erro ao atualizar o evento." }, { status: 500 });
   }
 }

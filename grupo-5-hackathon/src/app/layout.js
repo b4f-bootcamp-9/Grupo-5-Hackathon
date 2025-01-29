@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar"; // Importa a Navbar
 import Footer from "../components/Footer"; // Importa o Footer
 import { usePathname } from "next/navigation"; // Hook para verificar a rota atual
 import BackButton from "@/components/BackButton";
+
 // layout.js (Novo arquivo de layout) criado para separar o metadata, usePathname e use client.
 
 export default function RootLayout({ children }) {
