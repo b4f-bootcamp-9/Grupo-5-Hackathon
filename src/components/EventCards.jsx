@@ -18,7 +18,7 @@ export default function EventCards() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch('/api/modalteste');
+        const response = await fetch('/api/modalform');
         const data = await response.json();
         setEvents(data);
       } catch (error) {
@@ -32,7 +32,7 @@ export default function EventCards() {
   const handleDelete = async (id) => {
     if (window.confirm('Deseja realmente excluir este evento?')) {
       try {
-        const response = await fetch('/api/modalteste', {
+        const response = await fetch('/api/modalform', {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ export default function EventCards() {
 
   const handleSave = async (id) => {
     try {
-      const response = await fetch('/api/modalteste', {
+      const response = await fetch('/api/modalform', {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

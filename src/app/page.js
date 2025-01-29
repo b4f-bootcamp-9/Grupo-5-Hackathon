@@ -11,9 +11,6 @@ export default function Home() {
       <div className={styles.containerCards}>
         <Cards />
       </div>
-      <div className={styles.btnCards}>
-        <button>Saiba mais</button>
-      </div>
     </div>
   );
 }

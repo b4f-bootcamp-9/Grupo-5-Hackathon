@@ -1,9 +1,10 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import styles from "../app/styles/ModalAbout.module.css";
 
-export default function ModalAbout({ onClose }) {
-  // Estado para armazenar os valores do formulário
+export default function ModalAbout({ isOpen, setIsOpen, onEventAdded }) {
+  if (!isOpen) return null;
+
   const [nome, setNome] = useState("");
   const [dia, setDia] = useState("");
   const [ofertas, setOfertas] = useState("");
@@ -15,27 +16,35 @@ export default function ModalAbout({ onClose }) {
 
   const handleSend = async () => {
     try {
-      // Envia os dados para a API
-      const response = await fetch("/api/modalteste", {
+      const response = await fetch("/api/modalform", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ nome, dia, ofertas, condicoes, evento, regras, imagem }),
+        body: JSON.stringify({
+          nome,
+          dia,
+          ofertas,
+          condicoes,
+          evento,
+          regras,
+          imagem,
+        }),
       });
 
-      // Verifica se a resposta da API foi bem-sucedida
       if (!response.ok) {
         throw new Error("Erro ao enviar os dados1.");
       }
 
-      // Exibe a mensagem de sucesso
       setMessageSent(true);
 
-      // Fecha o modal após 2 segundos
       setTimeout(() => {
-        onClose();
+        setIsOpen(false);
       }, 2000);
+
+      if (onEventAdded) {
+        onEventAdded();
+      }
     } catch (error) {
       console.error("Erro ao enviar os dados2:", error);
       alert("Erro ao enviar os dados3. Tente novamente.");
@@ -43,9 +52,9 @@ export default function ModalAbout({ onClose }) {
   };
 
   return (
-    <div className={styles.container} onClick={onClose}>
+    <div className={styles.container} onClick={() => setIsOpen(false)}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <span onClick={onClose}>&times;</span>
+        <span onClick={() => setIsOpen(false)}>&times;</span>
         <div className={styles.modalHeader}>
           <h1>Preencha com as informações necessárias</h1>
         </div>
@@ -125,4 +134,3 @@ export default function ModalAbout({ onClose }) {
     </div>
   );
 }
-
