@@ -5,15 +5,7 @@ import styles from "../../src/app/styles/Cards.module.css";
 // ??
 // import CardPassos from "./CardPassos";
 
-const Cards = ({
-  imageSrc,
-  title,
-  descricao,
-  stars,
-  reviews,
-  location,
-  price,
-}) => {
+const Cards = ({ imageSrc, title, descricao, location, price }) => {
   return (
     <div className={styles.cardcontainer} href="/CardPassos">
       <div className={styles.card}>
@@ -30,7 +22,8 @@ const Cards = ({
           <h2 className={styles.title}>{title}</h2>
           <div className={styles.infoRow}>
             <div className={styles.starsContainer}>
-              {Array.from({ length: 5 }, (_, index) => (
+              {/*Por enquanto nao preciso deste codigo */}
+              {/* {Array.from({ length: 5 }, (_, index) => (
                 <span
                   key={index}
                   className={
@@ -39,14 +32,14 @@ const Cards = ({
                 >
                   ★
                 </span>
-              ))}
+              ))} */}
+
               <span className={styles.reviewsText}>
-                {stars} ({reviews}) - {location} -{descricao}
+                {location} {descricao}
               </span>
             </div>
           </div>
           <div className={styles.priceRow}>
-            <span className={styles.icon}>💰</span>
             <span>{price}</span>
           </div>
         </div>
