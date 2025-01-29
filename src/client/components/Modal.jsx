@@ -6,18 +6,22 @@ export default function Modal({ isOpen, onClose, cardData, onSave }) {
   const [messageSent, setMessageSent] = useState(false);
   const [formData, setFormData] = useState(cardData);
 
+<<<<<<< HEAD:src/client/components/Modal.jsx
   // função para nao rendezrar o mdoal se ele estiver fechado
   if (!isOpen) return null;
+=======
+  if(!isOpen) return null;
+
+>>>>>>> 3a6e12020405f063667b45a5f595d56138a6230d:src/components/Modal.jsx
 
   const handleChange = (e) => {
     const { name, value } = e.target;
   };
 
-  // Lidar com o clique no botão de envio
   const handleSend = () => {
-    setMessageSent(true); // Atualiza o estado para exibir a mensagem
+    setMessageSent(true);
     setTimeout(() => {
-      onClose(); // Fecha o modal automaticamente após 2 segundos
+      onClose();
     }, 2000);
   };
 

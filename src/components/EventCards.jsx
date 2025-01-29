@@ -1,36 +1,28 @@
-"use client";
-import React, { useEffect, useState } from "react";
-<<<<<<< HEAD:src/client/components/EventCards.jsx
-import styles from "../styles/EventCards.module.css";
+"use client"
+import React, { useEffect, useState } from 'react';
+import styles from '../app/styles/EventCards.module.css';
 
 export default function EventCards() {
   const [events, setEvents] = useState([]);
   const [editingId, setEditingId] = useState(null);
   const [formData, setFormData] = useState({
-    nome: "",
-    dia: "",
-    ofertas: "",
-    condicoes: "",
-    evento: "",
-    regras: "",
-    imagem: "",
+    nome: '',
+    dia: '',
+    ofertas: '',
+    condicoes: '',
+    evento: '',
+    regras: '',
+    imagem: ''
   });
-=======
-import styles from "../app/styles/EventCards.module.css";
-
-export default function EventCards() {
-  const [events, setEvents] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
->>>>>>> 3a6e12020405f063667b45a5f595d56138a6230d:src/components/Cards.jsx
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch("/api/modalform");
+        const response = await fetch('/api/modalform');
         const data = await response.json();
         setEvents(data);
       } catch (error) {
-        console.error("Erro ao buscar os eventos:", error);
+        console.error('Erro ao buscar os eventos:', error);
       }
     };
 
@@ -99,8 +91,7 @@ export default function EventCards() {
 
   return (
     <div className={styles.cardContainer}>
-<<<<<<< HEAD:src/client/components/EventCards.jsx
-      {events.map((event) => (
+      {events.map(event => (
         <div className={styles.card} key={event._id}>
           {editingId === event._id ? (
             <>
@@ -159,67 +150,19 @@ export default function EventCards() {
             </>
           ) : (
             <>
-              <img
-                src={event.imagem}
-                alt={event.nome}
-                className={styles.cardImage}
-              />
+              <img src={event.imagem} alt={event.nome} className={styles.cardImage} />
               <div className={styles.cardContent}>
                 <h2>{event.nome}</h2>
-                <p>
-                  <strong>Dia:</strong> {event.dia}
-                </p>
-                <p>
-                  <strong>Ofertas:</strong> {event.ofertas}
-                </p>
-                <p>
-                  <strong>Condições:</strong> {event.condicoes}
-                </p>
-                <p>
-                  <strong>Evento:</strong> {event.evento}
-                </p>
-                <p>
-                  <strong>Regras:</strong> {event.regras}
-                </p>
+                <p><strong>Dia:</strong> {event.dia}</p>
+                <p><strong>Ofertas:</strong> {event.ofertas}</p>
+                <p><strong>Condições:</strong> {event.condicoes}</p>
+                <p><strong>Evento:</strong> {event.evento}</p>
+                <p><strong>Regras:</strong> {event.regras}</p>
                 <button onClick={() => handleEdit(event)}>Editar</button>
                 <button onClick={() => handleDelete(event._id)}>Deletar</button>
               </div>
             </>
           )}
-=======
-      <button className={styles.sliderButton} onClick={prevCard}>
-        {"<"}
-      </button>
-      {events.length > 0 && (
-        <div className={styles.card} key={events[currentIndex]._id}>
-          <div className={styles.cardImage}>
-            <img
-              src={events[currentIndex].imagem}
-              alt={events[currentIndex].nome}
-            />
-          </div>
-          <div className={styles.cardContent}>
-            <h2>{events[currentIndex].nome}</h2>
-            <p>
-              <strong>Dia:</strong> {events[currentIndex].dia}
-            </p>
-            <p>
-              <strong>Ofertas:</strong> {events[currentIndex].ofertas}
-            </p>
-            <p>
-              <strong>Condições:</strong> {events[currentIndex].condicoes}
-            </p>
-            <p>
-              <strong>Evento:</strong> {events[currentIndex].evento}
-            </p>
-            <p>
-              <strong>Regras:</strong> {events[currentIndex].regras}
-            </p>
-            <p style={{ textAlign: "center", padding: "1rem" }}>
-              Garanta ja sua Vaga !!!
-            </p>
-          </div>
->>>>>>> 3a6e12020405f063667b45a5f595d56138a6230d:src/components/Cards.jsx
         </div>
       ))}
     </div>
