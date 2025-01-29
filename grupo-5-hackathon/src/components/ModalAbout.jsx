@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import styles from "../app/styles/ModalAbout.module.css";
 
@@ -9,6 +10,7 @@ export default function ModalAbout({ onClose }) {
   const [condicoes, setCondicoes] = useState("");
   const [evento, setEvento] = useState("");
   const [regras, setRegras] = useState("");
+  const [imagem, setImagem] = useState("");
   const [messageSent, setMessageSent] = useState(false);
 
   const handleSend = async () => {
@@ -19,7 +21,7 @@ export default function ModalAbout({ onClose }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ nome, dia, ofertas, condicoes, evento, regras }),
+        body: JSON.stringify({ nome, dia, ofertas, condicoes, evento, regras, imagem }),
       });
 
       // Verifica se a resposta da API foi bem-sucedida
@@ -87,6 +89,14 @@ export default function ModalAbout({ onClose }) {
             required
             value={evento}
             onChange={(e) => setEvento(e.target.value)}
+          />
+          <input
+            type="text"
+            name="imagem"
+            placeholder="Imagem Url:"
+            required
+            value={imagem}
+            onChange={(e) => setImagem(e.target.value)}
           />
           <textarea
             name="regras"

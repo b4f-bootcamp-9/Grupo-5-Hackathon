@@ -5,10 +5,10 @@ export async function POST(request) {
   try {
     const body = await request.json(); // Recebe os dados enviados via POST
 
-    const { nome, dia, ofertas, condicoes, evento, regras } = body;
+    const { nome, dia, ofertas, condicoes, evento, regras, imagem } = body;
 
     // Verifica se todos os campos necessários foram preenchidos
-    if (!nome || !dia || !ofertas || !condicoes || !evento || !regras) {
+    if (!nome || !dia || !ofertas || !condicoes || !evento || !regras || !imagem) {
       return NextResponse.json({ error: "Todos os campos são obrigatórios." }, { status: 400 });
     }
 
@@ -21,6 +21,7 @@ export async function POST(request) {
       condicoes,
       evento,
       regras,
+      imagem,
       createdAt: new Date(),
     });
 
@@ -33,4 +34,14 @@ export async function POST(request) {
   }
 }
 
+export async function GET() {
+  try {
+    const collection = await getMongoCollection("meuBanco", "meuColecao");
+    const events = await collection.find({}).toArray();
 
+    return NextResponse.json(events);
+  } catch (error) {
+    console.error('Erro ao buscar os dados:', error);
+    return NextResponse.json({ error: "Erro ao buscar os dados." }, { status: 500 });
+  }
+}
