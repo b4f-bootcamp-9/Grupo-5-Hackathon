@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 .navbar {
-  background-color: #856e07;
+  background-color: #051e4d;
   font-family: "Roboto", serif;
   display: flex;
   justify-content: space-between;
@@ -15,8 +15,8 @@
   justify-content: center;
   align-content: center;
   width: 35rem;
-  border-radius: 0.275rem;
-  padding: 0.35rem;
+  border-radius: 0.475rem;
+  padding: 0.45rem;
 }
 
 .logoContainer {
@@ -26,9 +26,9 @@
 }
 
 .logo {
-  margin: 0;
+  margin: -3rem;
   border-radius: 10em;
-  height: 7.5rem;
+  height: 15rem;
   padding: 1rem;
 }
 

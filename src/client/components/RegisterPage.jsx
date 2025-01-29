@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../app/styles/RegisterPage.module.css";
+import styles from "../styles/RegisterPage.module.css";
 
 const RegisterPage = () => {
   return (
@@ -16,7 +16,8 @@ const RegisterPage = () => {
           id="username"
           type="text"
           placeholder="Nome do utilizador:"
-        /><br/>
+        />
+        <br />
         <a className={styles.link} href="#">
           Desejo mudar a password
         </a>
@@ -26,12 +27,14 @@ const RegisterPage = () => {
           Descreva a sua empresa (na terceira pessoa) *
         </label>
         <p className={styles.description}>
-          Quer conquistar a atenção dos clientes?<br/>
-          <br/>Este é o sítio certo para se
-          dar a conhecer! <br/>
-          <br/>Explique porque é que a sua empresa faz a diferença na
-          realização de um evento. A nossa equipa de editores utilizará todas as
-          informações que nos fornecer para criar um anúncio atrativo.
+          Quer conquistar a atenção dos clientes?
+          <br />
+          <br />
+          Este é o sítio certo para se dar a conhecer! <br />
+          <br />
+          Explique porque é que a sua empresa faz a diferença na realização de
+          um evento. A nossa equipa de editores utilizará todas as informações
+          que nos fornecer para criar um anúncio atrativo.
         </p>
         <textarea
           className={styles.textarea}

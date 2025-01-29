@@ -1,19 +1,13 @@
-import styles from "../../src/app/styles/Cards.module.css";
 
-import Cards from "@/components/Cards";
-import SimpleSlider from "@/components/SimpleSlider";
+
+import Cards from "../client/components/Cards";
+import SimpleSlider from "../client/components/SimpleSlider";
 
 export default function Home() {
   return (
-    <div className={styles.containerHome}>
+    <div>
       <SimpleSlider />
-      <h1>✨ Participe de Eventos Exclusivos na Mundo GK dos Livros ✨</h1>
-      <div className={styles.containerCards}>
-        <Cards />
-      </div>
-      <div className={styles.btnCards}>
-        <button>Saiba mais</button>
-      </div>
+      <Cards />
     </div>
   );
 }

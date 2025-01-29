@@ -1,11 +1,13 @@
 "use client"; // Marca o componente como cliente
+import { useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import styles from "../app/styles/Navbar.module.css"; // Importa os estilos da Navbar
 import { useRouter } from "next/navigation";
+import styles from "../styles/Navbar.module.css";
 
 function Navbar() {
-  // ModalAbout
+  const [isHoveredHome, setIsHoveredHome] = useState(false);
+  const [isHoveredEventos, setIsHoveredEventos] = useState(false);
 
   const router = useRouter();
   const params = useSearchParams();
@@ -14,8 +16,7 @@ function Navbar() {
   return (
     <div className={styles.navbar}>
       {/* Logo à esquerda */}
-
-      <img src="/mdgk.png" alt="Logo" className={styles.logo} />
+      <img src="/logo1.png" alt="Logo" className={styles.logo} />
 
       <input type="text" placeholder="Pesquisar" />
 
@@ -23,15 +24,24 @@ function Navbar() {
       <ul className={styles.navLinks}>
         <li className={styles.navItem}>
           <Link
+            href="/card-details?localidade=&grupo=grupo5"
             style={{
               color: grupo === "grupo5" ? "#000" : "#fff",
               backgroundColor: grupo === "grupo5" ? "#fff" : "",
               borderRadius: ".5rem",
               padding: ".5rem",
               border: "none",
+              transition: "all 0.3s ease",
+              ...(isHoveredHome
+                ? {
+                    color: "#f6a418", // Cor ao passar o mouse
+                    backgroundColor: "#333", // Fundo ao passar o mouse
+                  }
+                : {}),
             }}
-            href="/card-details?localidade=&grupo=grupo5"
             className={styles.navLink}
+            onMouseEnter={() => setIsHoveredHome(true)}
+            onMouseLeave={() => setIsHoveredHome(false)}
           >
             Home
           </Link>
@@ -39,15 +49,24 @@ function Navbar() {
 
         <li className={styles.navItem}>
           <Link
+            href="/card-details?localidade=&grupo=grupo1"
             style={{
               color: grupo === "grupo1" ? "#000" : "#fff",
               backgroundColor: grupo === "grupo1" ? "#246a73" : "",
               borderRadius: ".5rem",
               padding: ".5rem",
               border: "none",
+              transition: "all 0.3s ease",
+              ...(isHoveredEventos
+                ? {
+                    color: "#f6a418", // Cor ao passar o mouse
+                    backgroundColor: "#444", // Fundo ao passar o mouse
+                  }
+                : {}),
             }}
-            href="/card-details?localidade=&grupo=grupo1"
             className={styles.navLink}
+            onMouseEnter={() => setIsHoveredEventos(true)}
+            onMouseLeave={() => setIsHoveredEventos(false)}
           >
             Eventos Geek
           </Link>

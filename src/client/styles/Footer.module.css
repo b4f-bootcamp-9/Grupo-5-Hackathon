@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 .footer {
-  background-color: #1f3a5b;
+  background-color: #051e4d;
   border-top: 0.063rem solid #ccc;
   font-family: "Roboto", serif;
   display: flex;
@@ -32,7 +32,7 @@
   text-decoration: none;
 }
 .column1 :link:hover {
-  color: #246a73;
+  color: #000000;
 }
 
 /*Fim da Coluna 1*/
@@ -73,7 +73,6 @@
   display: flex;
   align-items: flex-end;
 }
-
 
 .column3 {
   display: flex;

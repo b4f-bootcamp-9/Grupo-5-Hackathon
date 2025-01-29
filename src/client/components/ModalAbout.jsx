@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import React, { useState } from "react";
-import styles from "../app/styles/ModalAbout.module.css";
+import styles from "../styles/ModalAbout.module.css";
 
 export default function ModalAbout({ onClose }) {
   // Estado para armazenar os valores do formulário
@@ -21,7 +21,15 @@ export default function ModalAbout({ onClose }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ nome, dia, ofertas, condicoes, evento, regras, imagem }),
+        body: JSON.stringify({
+          nome,
+          dia,
+          ofertas,
+          condicoes,
+          evento,
+          regras,
+          imagem,
+        }),
       });
 
       // Verifica se a resposta da API foi bem-sucedida
@@ -125,4 +133,3 @@ export default function ModalAbout({ onClose }) {
     </div>
   );
 }
-

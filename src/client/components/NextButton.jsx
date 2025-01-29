@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../app/styles/NextButton.module.css";
-import { useRouter } from 'next/navigation'; // Para navegação em páginas do Next.js
+import styles from "../styles/NextButton.module.css";
+import { useRouter } from "next/navigation"; // Para navegação em páginas do Next.js
 
 export const NextButton = ({ onClick, redirectTo }) => {
   const router = useRouter();
@@ -17,13 +17,13 @@ export const NextButton = ({ onClick, redirectTo }) => {
 
   return (
     <div className={styles.container}>
-    <button 
-      className={styles.NextButton} // Classe CSS para estilo
-      onClick={handleNext} // Adiciona a lógica de redirecionamento
-    >
-      <span className={styles.icon}>&#x276F;</span> {/* Ícone da seta */}
-      <span className={styles.text}>Próximo</span> {/* Texto do botão */}
-    </button>
+      <button
+        className={styles.NextButton} // Classe CSS para estilo
+        onClick={handleNext} // Adiciona a lógica de redirecionamento
+      >
+        <span className={styles.icon}>&#x276F;</span> {/* Ícone da seta */}
+        <span className={styles.text}>Próximo</span> {/* Texto do botão */}
+      </button>
     </div>
   );
 };

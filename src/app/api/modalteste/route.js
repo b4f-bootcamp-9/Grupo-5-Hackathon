@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getMongoCollection } from '@/data/mongodb';
+import { getMongoCollection } from '@/server/data/mongodb';
 import { ObjectId } from 'mongodb';
 
 export async function POST(request) {

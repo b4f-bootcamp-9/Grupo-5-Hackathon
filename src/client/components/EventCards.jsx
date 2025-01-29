@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import styles from "../app/styles/EventCards.module.css"; // Certifique-se de que o caminho está correto
-import ModalAbout from "./ModalAbout";
+import styles from "../styles/EventCards.module.css";
 
 export default function EventCards() {
   const [events, setEvents] = useState([]);
@@ -15,7 +14,6 @@ export default function EventCards() {
     regras: "",
     imagem: "",
   });
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -95,24 +93,11 @@ export default function EventCards() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const nextCard = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % events.length);
-  };
-
-  const prevCard = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? events.length - 1 : prevIndex - 1
-    );
-  };
-
   return (
     <div className={styles.cardContainer}>
-      <button className={styles.sliderButton} onClick={prevCard}>
-        {"<"}
-      </button>
-      {events.length > 0 && (
-        <div className={styles.card} key={events[currentIndex]._id}>
-          {editingId === events[currentIndex]._id ? (
+      {events.map((event) => (
+        <div className={styles.card} key={event._id}>
+          {editingId === event._id ? (
             <>
               <input
                 type="text"
@@ -120,7 +105,6 @@ export default function EventCards() {
                 value={formData.imagem}
                 onChange={handleInputChange}
                 className={styles.cardImageInput}
-                placeholder="Edite ImagemURL:"
               />
               <div className={styles.cardContent}>
                 <input
@@ -129,7 +113,6 @@ export default function EventCards() {
                   value={formData.nome}
                   onChange={handleInputChange}
                   className={styles.cardInput}
-                  placeholder="Nome do Evento:"
                 />
                 <input
                   type="text"
@@ -137,7 +120,6 @@ export default function EventCards() {
                   value={formData.dia}
                   onChange={handleInputChange}
                   className={styles.cardInput}
-                  placeholder="Dia do Evento:"
                 />
                 <input
                   type="text"
@@ -145,7 +127,6 @@ export default function EventCards() {
                   value={formData.ofertas}
                   onChange={handleInputChange}
                   className={styles.cardInput}
-                  placeholder="Brindes:"
                 />
                 <input
                   type="text"
@@ -153,7 +134,6 @@ export default function EventCards() {
                   value={formData.condicoes}
                   onChange={handleInputChange}
                   className={styles.cardInput}
-                  placeholder="Condições:"
                 />
                 <input
                   type="text"
@@ -161,60 +141,48 @@ export default function EventCards() {
                   value={formData.evento}
                   onChange={handleInputChange}
                   className={styles.cardInput}
-                  placeholder="Tipo do Evento:"
                 />
                 <textarea
                   name="regras"
                   value={formData.regras}
                   onChange={handleInputChange}
                   className={styles.cardTextarea}
-                  placeholder="Regras do Evento:"
                 ></textarea>
-                <button onClick={() => handleSave(events[currentIndex]._id)}>
-                  Salvar
-                </button>
+                <button onClick={() => handleSave(event._id)}>Salvar</button>
                 <button onClick={() => setEditingId(null)}>Cancelar</button>
               </div>
             </>
           ) : (
             <>
-              <div className={styles.cardImage}>
-                <img
-                  src={events[currentIndex].imagem}
-                  alt={events[currentIndex].nome}
-                />
-              </div>
+              <img
+                src={event.imagem}
+                alt={event.nome}
+                className={styles.cardImage}
+              />
               <div className={styles.cardContent}>
-                <h2>{events[currentIndex].nome}</h2>
+                <h2>{event.nome}</h2>
                 <p>
-                  <strong>Dia:</strong> {events[currentIndex].dia}
+                  <strong>Dia:</strong> {event.dia}
                 </p>
                 <p>
-                  <strong>Ofertas:</strong> {events[currentIndex].ofertas}
+                  <strong>Ofertas:</strong> {event.ofertas}
                 </p>
                 <p>
-                  <strong>Condições:</strong> {events[currentIndex].condicoes}
+                  <strong>Condições:</strong> {event.condicoes}
                 </p>
                 <p>
-                  <strong>Evento:</strong> {events[currentIndex].evento}
+                  <strong>Evento:</strong> {event.evento}
                 </p>
                 <p>
-                  <strong>Regras:</strong> {events[currentIndex].regras}
+                  <strong>Regras:</strong> {event.regras}
                 </p>
-                <button onClick={() => handleEdit(events[currentIndex])}>
-                  Editar
-                </button>
-                <button onClick={() => handleDelete(events[currentIndex]._id)}>
-                  Deletar
-                </button>
+                <button onClick={() => handleEdit(event)}>Editar</button>
+                <button onClick={() => handleDelete(event._id)}>Deletar</button>
               </div>
             </>
           )}
         </div>
-      )}
-      <button className={styles.sliderButton} onClick={nextCard}>
-        {">"}
-      </button>
+      ))}
     </div>
   );
 }

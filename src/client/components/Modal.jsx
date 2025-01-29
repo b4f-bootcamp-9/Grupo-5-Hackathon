@@ -1,20 +1,17 @@
 "use client";
 import { useState } from "react";
-import styles from "../app/styles/Modal.module.css";
+import styles from "../styles/Modal.module.css";
 
 export default function Modal({ isOpen, onClose, cardData, onSave }) {
   const [messageSent, setMessageSent] = useState(false);
   const [formData, setFormData] = useState(cardData);
 
-  // função para nao rendezrar o mdoal se ele estiver fechado 
-  if(!isOpen) return null;
-
+  // função para nao rendezrar o mdoal se ele estiver fechado
+  if (!isOpen) return null;
 
   const handleChange = (e) => {
-    const {name, value} = e.target;
-  }
-
-
+    const { name, value } = e.target;
+  };
 
   // Lidar com o clique no botão de envio
   const handleSend = () => {

@@ -1,7 +1,13 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
 import { useState } from "react";
 
 //Importação das dependencias do swiper :)
@@ -10,16 +16,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-import styles from "../app/styles/SimpleSlider.module.css";
-import ModalAbout from "./ModalAbout";
+import styles from "../styles/SimpleSlider.module.css";
 
 function SimpleSlider() {
   const [slidePerView, setSlidePerView] = useState(3);
-  const [openModal, setOpenModal] = useState(false);
 
-  const handleModal = () => {
-    setOpenModal((prev) => !prev);
-  };
   const data = [
     { id: "1", image: "/Images/img1.jpg" },
     { id: "2", image: "/Images/img2.jpg" },
@@ -34,15 +35,22 @@ function SimpleSlider() {
       <h1 className={styles.title}>
         🚨 Super Descontos de{" "}
         <span style={{ color: "blue", fontSize: "3rem" }}>70%</span> da Mundo GK
-        dos Livros! Garanta Já Seus Livros Favoritos Com Preços Incríveis! 🚨
+        dos Livros!🚨
       </h1>
+
       <Swiper
         className={styles.containerSw}
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
         slidesPerView={slidePerView}
-        navigation
-        pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Scrollbar, A11y]}
       >
         {data.map((item) => (
           <SwiperSlide className={styles.SwiperImagem} key={item.id}>
@@ -54,11 +62,6 @@ function SimpleSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      {/* <div className={styles.modalContent}>
-        {openModal ? <ModalAbout onClose={handleModal} /> : null}
-        <button onClick={handleModal}>Saiba mais</button>{" "}
-      </div> */}
     </div>
   );
 }

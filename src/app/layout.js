@@ -1,6 +1,6 @@
 "use client";
-import Navbar from "../components/Navbar"; // Importa a Navbar
-import Footer from "../components/Footer"; // Importa o Footer
+import Navbar from "../client/components/Navbar"; // Importa a Navbar
+import Footer from "../client/components/Footer"; // Importa o Footer
 import { usePathname } from "next/navigation"; // Hook para verificar a rota atual
 
 export default function RootLayout({ children }) {
