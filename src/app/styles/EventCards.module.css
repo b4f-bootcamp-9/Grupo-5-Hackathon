@@ -1,0 +1,33 @@
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  width: 400px;
+}
+
+.cardImage {
+  max-width: 150px;
+  border-radius: 8px;
+  margin-right: 16px;
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  margin: 8px 0;
+}
