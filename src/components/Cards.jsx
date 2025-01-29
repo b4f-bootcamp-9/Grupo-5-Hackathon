@@ -1,51 +1,220 @@
-import React from "react";
-import Image from "next/image";
-import styles from "../../src/app/styles/Cards.module.css";
+"use client";
+import React, { useEffect, useState } from "react";
+import styles from "../app/styles/EventCards.module.css"; // Certifique-se de que o caminho está correto
+import ModalAbout from "./ModalAbout";
 
-// ??
-// import CardPassos from "./CardPassos";
+export default function EventCards() {
+  const [events, setEvents] = useState([]);
+  const [editingId, setEditingId] = useState(null);
+  const [formData, setFormData] = useState({
+    nome: "",
+    dia: "",
+    ofertas: "",
+    condicoes: "",
+    evento: "",
+    regras: "",
+    imagem: "",
+  });
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-const Cards = ({ imageSrc, title, descricao, location, price }) => {
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch("/api/modalteste");
+        const data = await response.json();
+        setEvents(data);
+      } catch (error) {
+        console.error("Erro ao buscar os eventos:", error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
+  const handleDelete = async (id) => {
+    if (window.confirm("Deseja realmente excluir este evento?")) {
+      try {
+        const response = await fetch("/api/modalteste", {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id }),
+        });
+
+        if (response.ok) {
+          setEvents(events.filter((event) => event._id !== id));
+        } else {
+          console.error("Erro ao deletar o evento:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Erro ao deletar o evento:", error);
+      }
+    }
+  };
+
+  const handleEdit = (event) => {
+    setEditingId(event._id);
+    setFormData({
+      nome: event.nome,
+      dia: event.dia,
+      ofertas: event.ofertas,
+      condicoes: event.condicoes,
+      evento: event.evento,
+      regras: event.regras,
+      imagem: event.imagem,
+    });
+  };
+
+  const handleSave = async (id) => {
+    try {
+      const response = await fetch("/api/modalteste", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id, ...formData }),
+      });
+
+      if (response.ok) {
+        setEvents(
+          events.map((event) =>
+            event._id === id ? { ...event, ...formData } : event
+          )
+        );
+        setEditingId(null);
+      } else {
+        console.error("Erro ao atualizar o evento:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Erro ao atualizar o evento:", error);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const nextCard = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % events.length);
+  };
+
+  const prevCard = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? events.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
-    <div className={styles.cardcontainer} href="/CardPassos">
-      <div className={styles.card}>
-        <div className={styles.imageContainer}>
-          <Image
-            src={imageSrc}
-            alt={title}
-            layout="fill"
-            objectFit="cover"
-            className={styles.image}
-          />
+    <div className={styles.cardContainer}>
+      <button className={styles.sliderButton} onClick={prevCard}>
+        {"<"}
+      </button>
+      {events.length > 0 && (
+        <div className={styles.card} key={events[currentIndex]._id}>
+          {editingId === events[currentIndex]._id ? (
+            <>
+              <input
+                type="text"
+                name="imagem"
+                value={formData.imagem}
+                onChange={handleInputChange}
+                className={styles.cardImageInput}
+                placeholder="Edite ImagemURL:"
+              />
+              <div className={styles.cardContent}>
+                <input
+                  type="text"
+                  name="nome"
+                  value={formData.nome}
+                  onChange={handleInputChange}
+                  className={styles.cardInput}
+                  placeholder="Nome do Evento:"
+                />
+                <input
+                  type="text"
+                  name="dia"
+                  value={formData.dia}
+                  onChange={handleInputChange}
+                  className={styles.cardInput}
+                  placeholder="Dia do Evento:"
+                />
+                <input
+                  type="text"
+                  name="ofertas"
+                  value={formData.ofertas}
+                  onChange={handleInputChange}
+                  className={styles.cardInput}
+                  placeholder="Brindes:"
+                />
+                <input
+                  type="text"
+                  name="condicoes"
+                  value={formData.condicoes}
+                  onChange={handleInputChange}
+                  className={styles.cardInput}
+                  placeholder="Condições:"
+                />
+                <input
+                  type="text"
+                  name="evento"
+                  value={formData.evento}
+                  onChange={handleInputChange}
+                  className={styles.cardInput}
+                  placeholder="Tipo do Evento:"
+                />
+                <textarea
+                  name="regras"
+                  value={formData.regras}
+                  onChange={handleInputChange}
+                  className={styles.cardTextarea}
+                  placeholder="Regras do Evento:"
+                ></textarea>
+                <button onClick={() => handleSave(events[currentIndex]._id)}>
+                  Salvar
+                </button>
+                <button onClick={() => setEditingId(null)}>Cancelar</button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className={styles.cardImage}>
+                <img
+                  src={events[currentIndex].imagem}
+                  alt={events[currentIndex].nome}
+                />
+              </div>
+              <div className={styles.cardContent}>
+                <h2>{events[currentIndex].nome}</h2>
+                <p>
+                  <strong>Dia:</strong> {events[currentIndex].dia}
+                </p>
+                <p>
+                  <strong>Ofertas:</strong> {events[currentIndex].ofertas}
+                </p>
+                <p>
+                  <strong>Condições:</strong> {events[currentIndex].condicoes}
+                </p>
+                <p>
+                  <strong>Evento:</strong> {events[currentIndex].evento}
+                </p>
+                <p>
+                  <strong>Regras:</strong> {events[currentIndex].regras}
+                </p>
+                <button onClick={() => handleEdit(events[currentIndex])}>
+                  Editar
+                </button>
+                <button onClick={() => handleDelete(events[currentIndex]._id)}>
+                  Deletar
+                </button>
+              </div>
+            </>
+          )}
         </div>
-        <div className={styles.content}>
-          <h2 className={styles.title}>{title}</h2>
-          <div className={styles.infoRow}>
-            <div className={styles.starsContainer}>
-              {/*Por enquanto nao preciso deste codigo */}
-              {/* {Array.from({ length: 5 }, (_, index) => (
-                <span
-                  key={index}
-                  className={
-                    index < stars ? styles.starFilled : styles.starEmpty
-                  }
-                >
-                  ★
-                </span>
-              ))} */}
-
-              <span className={styles.reviewsText}>
-                {location} {descricao}
-              </span>
-            </div>
-          </div>
-          <div className={styles.priceRow}>
-            <span>{price}</span>
-          </div>
-        </div>
-      </div>
+      )}
+      <button className={styles.sliderButton} onClick={nextCard}>
+        {">"}
+      </button>
     </div>
   );
-};
-
-export default Cards;
+}

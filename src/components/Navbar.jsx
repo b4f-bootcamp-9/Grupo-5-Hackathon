@@ -24,8 +24,8 @@ function Navbar() {
         <li className={styles.navItem}>
           <Link
             style={{
-              color: grupo === "grupo5" ? "white" : "black",
-              backgroundColor: grupo === "grupo5" ? "#246a73" : "",
+              color: grupo === "grupo5" ? "#000" : "#fff",
+              backgroundColor: grupo === "grupo5" ? "#fff" : "",
               borderRadius: ".5rem",
               padding: ".5rem",
               border: "none",
@@ -40,7 +40,7 @@ function Navbar() {
         <li className={styles.navItem}>
           <Link
             style={{
-              color: grupo === "grupo1" ? "white" : "black",
+              color: grupo === "grupo1" ? "#000" : "#fff",
               backgroundColor: grupo === "grupo1" ? "#246a73" : "",
               borderRadius: ".5rem",
               padding: ".5rem",
@@ -51,20 +51,6 @@ function Navbar() {
           >
             Eventos Geek
           </Link>
-        </li>
-
-        <li className={styles.navItem}>
-          <Link href="/sobre-nos" className={styles.navLink}>
-            Sobre Nós
-          </Link>
-        </li>
-        <li className={styles.navItem}>
-          <button
-            className={styles.btnLogo}
-            onClick={() => router.push("/login")}
-          >
-            <img src="/Images/perfil.png" alt="" className={styles.perfil} />
-          </button>
         </li>
       </ul>
     </div>
