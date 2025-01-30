@@ -52,24 +52,44 @@ export default function EventCards() {
               <h2>{events[currentIndex].nome}</h2>
               <p>
                 <strong>
-                  <span style={{ color: "#F6A519" }}>Dia:</span>
+                  <span style={{ color: "#051e4d" }}>Dia:</span>
                 </strong>{" "}
                 {events[currentIndex].dia}
               </p>
               <p>
-                <strong>Ofertas:</strong> {events[currentIndex].ofertas}
+                <strong>
+                  <span style={{ color: "#051e4d" }}>Ofertas:</span>
+                </strong>{" "}
+                {events[currentIndex].ofertas}
               </p>
               <p>
-                <strong>Condições:</strong> {events[currentIndex].condicoes}
+                <strong>
+                  <span style={{ color: "#051e4d" }}>Condições:</span>
+                </strong>{" "}
+                {events[currentIndex].condicoes}
               </p>
               <p>
-                <strong>Evento:</strong> {events[currentIndex].evento}
+                <strong>
+                  <span style={{ color: "#051e4d" }}>Evento:</span>
+                </strong>{" "}
+                {events[currentIndex].evento}
               </p>
               <p>
-                <strong>Regras:</strong> {events[currentIndex].regras}
+                <strong>
+                  <span style={{ color: "#051e4d" }}>Regras:</span>
+                </strong>{" "}
+                {events[currentIndex].regras}
               </p>
-              <p style={{ textAlign: "center", padding: "1rem" }}>
-                Garanta ja sua Vaga !!!
+              <p
+                style={{
+                  color: "#051e4d",
+                  textAlign: "center",
+                  padding: "1.5rem",
+                  fontSize: "1.1rem",
+                  fontWeight: "bold",
+                }}
+              >
+                Garanta já a sua Vaga !!!
               </p>
             </div>
           </div>
