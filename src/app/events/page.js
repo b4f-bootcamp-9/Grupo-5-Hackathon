@@ -3,10 +3,13 @@ import React, { useState } from "react";
 import EventCards from "../../client/components/EventCards";
 import ModalAbout from "../../client/components/ModalAbout";
 import styles from "../../client/styles/ModalAbout.module.css";
+import { useRouter } from "next/navigation";
+import BookCards from "@/client/components/BookCards";
 
 export default function EventsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
+  const router = useRouter();  // Definindo o router aqui
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -16,12 +19,22 @@ export default function EventsPage() {
     setRefreshKey((old) => old + 1);
   };
 
+  const handleGraficosClick = () => {
+    router.push("/graficos");
+  };
+
   return (
     <div>
-      <h1>Eventos Recentes</h1>
-      <button className={styles.button} onClick={handleOpenModal}>
-        Adicionar Evento
-      </button>
+      <h1 style={{ textAlign: "center" }}>Eventos Recentes</h1>
+      <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+        <button onClick={handleOpenModal} className={styles.button}>
+          Adicionar Evento
+        </button>
+        <button onClick={handleGraficosClick} className={styles.button}
+        >
+          Gráficos
+        </button>
+      </div>
       <EventCards key={refreshKey} />
       {isModalOpen && (
         <ModalAbout
@@ -30,6 +43,7 @@ export default function EventsPage() {
           onEventAdded={handleEventAdded}
         />
       )}
+      <BookCards/>
     </div>
   );
 }

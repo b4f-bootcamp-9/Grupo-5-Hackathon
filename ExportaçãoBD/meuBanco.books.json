@@ -1,0 +1,180 @@
+[{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748ae"
+  },
+  "nome": "Harry Potter e a Pedra Filosofal",
+  "quantidadeEmStock": 50,
+  "imagemURL": "https://m.media-amazon.com/images/I/61jgm6ooXzL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2024-01-20T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748af"
+  },
+  "nome": "O Senhor dos Anéis: A Sociedade do Anel",
+  "quantidadeEmStock": 75,
+  "imagemURL": "https://m.media-amazon.com/images/I/81SWBRKfExL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2024-01-15T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748b0"
+  },
+  "nome": "Star Wars: Herdeiro do Império",
+  "quantidadeEmStock": 30,
+  "imagemURL": "https://m.media-amazon.com/images/I/81GiWe+k9sL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2024-02-10T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748b1"
+  },
+  "nome": "O Guia do Mochileiro das Galáxias",
+  "quantidadeEmStock": 40,
+  "imagemURL": "https://m.media-amazon.com/images/I/91NAJgaUlKL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2024-03-05T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748b2"
+  },
+  "nome": "Game of Thrones: A Guerra dos Tronos",
+  "quantidadeEmStock": 65,
+  "imagemURL": "https://m.media-amazon.com/images/I/91+1SUO3vUL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2024-04-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748b3"
+  },
+  "nome": "Duna",
+  "quantidadeEmStock": 55,
+  "imagemURL": "https://m.media-amazon.com/images/I/91XCwEX5fiL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2024-05-15T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748b4"
+  },
+  "nome": "As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa",
+  "quantidadeEmStock": 90,
+  "imagemURL": "https://m.media-amazon.com/images/I/7158aW38zxL.jpg",
+  "dataDeRecebimento": "2024-06-12T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748b5"
+  },
+  "nome": "Fundação",
+  "quantidadeEmStock": 45,
+  "imagemURL": "https://m.media-amazon.com/images/I/712vJIziMgL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2024-07-18T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748b6"
+  },
+  "nome": "Neuromancer",
+  "quantidadeEmStock": 25,
+  "imagemURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ePXwerl6VfZONDIh75hkjBiH25xjGTuwwA&s",
+  "dataDeRecebimento": "2024-08-22T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748b7"
+  },
+  "nome": "Blade Runner: Androides Sonham com Ovelhas Elétricas?",
+  "quantidadeEmStock": 35,
+  "imagemURL": "https://m.media-amazon.com/images/I/81EF+PvpetL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2024-09-10T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748b8"
+  },
+  "nome": "Harry Potter e o Cálice de Fogo",
+  "quantidadeEmStock": 85,
+  "imagemURL": "https://m.media-amazon.com/images/I/8172dLr8Z7L._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2024-10-05T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748b9"
+  },
+  "nome": "O Senhor dos Anéis: O Retorno do Rei",
+  "quantidadeEmStock": 60,
+  "imagemURL": "https://m.media-amazon.com/images/I/81LUEEYfQNL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2023-11-12T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748ba"
+  },
+  "nome": "Star Wars: Sombras do Império",
+  "quantidadeEmStock": 48,
+  "imagemURL": "https://m.media-amazon.com/images/I/91zRYFLBpnL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2023-12-18T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748bb"
+  },
+  "nome": "Jogador Número 1",
+  "quantidadeEmStock": 58,
+  "imagemURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWgCwj28LXV8ZCt5fx6lUjbqXtBNVuAmWXVw&s",
+  "dataDeRecebimento": "2024-01-25T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748bc"
+  },
+  "nome": "Harry Potter e o Prisioneiro de Azkaban",
+  "quantidadeEmStock": 95,
+  "imagemURL": "https://m.media-amazon.com/images/I/81QnqHwRiUL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2024-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748bd"
+  },
+  "nome": "O Hobbit",
+  "quantidadeEmStock": 72,
+  "imagemURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHmkcR1BUTUEMz3gtzlkRM2Lb73oWVcU7S0A&s",
+  "dataDeRecebimento": "2023-12-12T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748be"
+  },
+  "nome": "Star Wars: Kenobi",
+  "quantidadeEmStock": 37,
+  "imagemURL": "https://m.media-amazon.com/images/I/71QresaStjL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2024-02-14T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748bf"
+  },
+  "nome": "Senhor dos Anéis: As Duas Torres",
+  "quantidadeEmStock": 62,
+  "imagemURL": "https://m.media-amazon.com/images/I/81lQ5N0QwJL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2023-11-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748c0"
+  },
+  "nome": "Ready Player Two",
+  "quantidadeEmStock": 20,
+  "imagemURL": "https://m.media-amazon.com/images/I/71R47C5CdML._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2023-10-15T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "679aa3caeb1f033e218748c1"
+  },
+  "nome": "A Bússola de Ouro",
+  "quantidadeEmStock": 67,
+  "imagemURL": "https://m.media-amazon.com/images/I/819DY12SBLL._AC_UF1000,1000_QL80_.jpg",
+  "dataDeRecebimento": "2023-09-25T00:00:00Z"
+}]

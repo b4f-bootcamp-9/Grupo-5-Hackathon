@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "6799fda0ef9b0f1223f5e7dc"
+  },
+  "nome": "Dia da Leitura",
+  "dia": "5 de Fevereiro, 2025",
+  "ofertas": "Cópia do Livro \"A Bússola de Ouro\".",
+  "condicoes": "Os 65 Primeiros a chegarem na Loja.",
+  "evento": "Leitura.",
+  "regras": "Não fazer barulho.",
+  "createdAt": {
+    "$date": "2025-01-29T10:06:24.354Z"
+  },
+  "imagem": "https://m.media-amazon.com/images/I/819DY12SBLL._AC_UF1000,1000_QL80_.jpg"
+},
+{
+  "_id": {
+    "$oid": "679a7a6df2b3ac319e8cf5e4"
+  },
+  "nome": "Dia da terra média",
+  "dia": "20 de fevereiro, 2025",
+  "ofertas": "Cópia do livro \"O Senhor dos Anéis: O Retorno do Rei.\"",
+  "condicoes": "Vencer no jogo de tabuleiro \"Lord of the Rings: Return of the king.\"",
+  "evento": "Jogos de Tabuleiro.",
+  "regras": "Estar presente no Evento.",
+  "imagem": "https://m.media-amazon.com/images/I/81LUEEYfQNL._AC_UF1000,1000_QL80_.jpg",
+  "createdAt": {
+    "$date": "2025-01-29T18:58:53.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "679aacfe7cf9b67f8bc41deb"
+  },
+  "nome": "Dia do Jedi",
+  "dia": "28 de Fevereiro, 2025",
+  "ofertas": "Uma cópia do livro \"Star Wars: Sombras do Império\".",
+  "condicoes": "Vencer nas mesas de jogo de Tabuleiro do Star Wars.",
+  "evento": "Jogos de Tabuleiro.",
+  "regras": "Ser o vencedor.",
+  "imagem": "https://m.media-amazon.com/images/I/91zRYFLBpnL._AC_UF1000,1000_QL80_.jpg",
+  "createdAt": {
+    "$date": "2025-01-29T22:34:38.311Z"
+  }
+}]

@@ -115,6 +115,7 @@ export default function EventCards() {
                   value={formData.imagem}
                   onChange={handleInputChange}
                   className={styles.cardImageInput}
+                  placeholder="Insira ImagemURL:"
                 />
                 <div className={styles.cardContent}>
                   <input
@@ -123,6 +124,7 @@ export default function EventCards() {
                     value={formData.nome}
                     onChange={handleInputChange}
                     className={styles.cardInput}
+                    placeholder="Nome do Evento:"
                   />
                   <input
                     type="text"
@@ -130,6 +132,7 @@ export default function EventCards() {
                     value={formData.dia}
                     onChange={handleInputChange}
                     className={styles.cardInput}
+                    placeholder="Dia do Evento:"
                   />
                   <input
                     type="text"
@@ -137,6 +140,7 @@ export default function EventCards() {
                     value={formData.ofertas}
                     onChange={handleInputChange}
                     className={styles.cardInput}
+                    placeholder="Brindes e/ou Ofertas:"
                   />
                   <input
                     type="text"
@@ -144,6 +148,7 @@ export default function EventCards() {
                     value={formData.condicoes}
                     onChange={handleInputChange}
                     className={styles.cardInput}
+                    placeholder="Condições: (Ex. 20 Primeiras pessoas a chegar)"
                   />
                   <input
                     type="text"
@@ -151,12 +156,14 @@ export default function EventCards() {
                     value={formData.evento}
                     onChange={handleInputChange}
                     className={styles.cardInput}
+                    placeholder="Evento: (Ex. Campeonato de jogos de Tabuleiro)"
                   />
                   <textarea
                     name="regras"
                     value={formData.regras}
                     onChange={handleInputChange}
                     className={styles.cardTextarea}
+                    placeholder="Insira as Regras do Evento:"
                   ></textarea>
                   <button onClick={() => handleSave(event._id)}>Salvar</button>
                   <button onClick={() => setEditingId(null)}>Cancelar</button>

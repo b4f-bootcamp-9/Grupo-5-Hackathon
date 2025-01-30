@@ -1,0 +1,91 @@
+/* 🌑 Global Styles - Dark Theme */
+.body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212; /* Deep black background */
+  color: #e0e0e0; /* Light gray text */
+  margin:0;
+  padding:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+/* 📌 Main App Container */
+.App {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 🌟 Page Header */
+.header {
+  font-size: 2.5rem;
+  color: #00a8ff; /* Bright blue for contrast */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* 📊 Charts Container */
+.chartContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 174, 255, 0.2);
+  border-radius: 2%;
+  align-items: center;
+  gap: 20px;
+  width: 70%;
+  padding: 20px;
+  flex-direction: row;
+}
+
+/* 📈 Individual Chart Box */
+.chart {
+  width: 22%;
+  min-width: 250px;
+  height: 350px;
+  background-color: #FFFFFF; /* Dark box for contrast */
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🔥 Hover Effect */
+.chart:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 174, 255, 0.4); /* Blue glow effect */
+}
+
+/* 📌 Chart Titles */
+.h2 {
+  font-size: 1.5rem;
+  color: #00a8ff; /* Bright blue accent */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* 🖥️ Responsive Layout */
+@media (max-width: 768px) {
+  .chart {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart {
+    width: 90%;
+  }
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}

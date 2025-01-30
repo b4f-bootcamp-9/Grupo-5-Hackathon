@@ -62,7 +62,7 @@ export default function ModalAbout({ isOpen, setIsOpen, onEventAdded }) {
           <input
             type="text"
             name="nome"
-            placeholder="Nome do Evento"
+            placeholder="Nome do Evento:"
             required
             value={nome}
             onChange={(e) => setNome(e.target.value)}
@@ -70,7 +70,7 @@ export default function ModalAbout({ isOpen, setIsOpen, onEventAdded }) {
           <input
             type="text"
             name="dia"
-            placeholder="Dia do Evento"
+            placeholder="Dia do Evento:"
             required
             value={dia}
             onChange={(e) => setDia(e.target.value)}
@@ -78,7 +78,7 @@ export default function ModalAbout({ isOpen, setIsOpen, onEventAdded }) {
           <input
             type="text"
             name="ofertas"
-            placeholder="Brindes e/ou Ofertas"
+            placeholder="Brindes e/ou Ofertas:"
             required
             value={ofertas}
             onChange={(e) => setOfertas(e.target.value)}
@@ -109,7 +109,7 @@ export default function ModalAbout({ isOpen, setIsOpen, onEventAdded }) {
           />
           <textarea
             name="regras"
-            placeholder="Regras do Evento"
+            placeholder="Insira as Regras do Evento:"
             required
             className={styles.inputField}
             value={regras}

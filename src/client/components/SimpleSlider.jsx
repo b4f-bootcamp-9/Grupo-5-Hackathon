@@ -22,11 +22,11 @@ function SimpleSlider() {
   const [slidePerView, setSlidePerView] = useState(3);
 
   const data = [
-    { id: "1", image: "/Images/img1.jpg" },
-    { id: "2", image: "/Images/img2.jpg" },
-    { id: "3", image: "/Images/img3.jpg" },
-    { id: "4", image: "/Images/img7.jpg" },
-    { id: "5", image: "/Images/img5.jpg" },
+    { id: "1", image: "https://m.media-amazon.com/images/I/712vJIziMgL._AC_UF1000,1000_QL80_.jpg" },
+    { id: "2", image: "https://m.media-amazon.com/images/I/7158aW38zxL.jpg" },
+    { id: "3", image: "https://m.media-amazon.com/images/I/91XCwEX5fiL._AC_UF1000,1000_QL80_.jpg" },
+    { id: "4", image: "https://m.media-amazon.com/images/I/91+1SUO3vUL._AC_UF1000,1000_QL80_.jpg" },
+    { id: "5", image: "https://m.media-amazon.com/images/I/91NAJgaUlKL._AC_UF1000,1000_QL80_.jpg" },
     { id: "6", image: "/Images/img6.jpg" },
   ];
 
