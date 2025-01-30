@@ -1,86 +1,82 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 .cardContainer {
-  padding: 5rem 0;
-  border-radius: 0.375rem;
-  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 2.5rem;
-}
-
-.sliderButton {
-  position: relative;
-  transform: translateY(-40%);
-  display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 1em;
-  color: white;
-  border: none;
-  padding: 0.625rem;
-  cursor: pointer;
-  z-index: 1;
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1.5rem;
+  background-color: #dddbdb;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 5rem;
 }
 
 .card {
+  text-align: center;
   border-radius: 0.375rem;
-  width: 50vw;
-  height: 65vh;
+  width: 30%;
   font-family: "Roboto", serif;
   background-color: #051e4d;
-  color: #fff;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  cursor: pointer;
-  display: flex;
-  text-align: center;
-  justify-content: space-evenly;
-  padding: 2rem 10rem;
-  gap: 4rem;
-}
-
-.cardImage {
-  margin-left: auto;
-  width: 20rem;
-  border-radius: 0.375rem;
-}
-
-.cardImage img {
-  gap: 4rem;
-  box-shadow: 1px 1px 1px 3px rgba(255, 255, 255, 0.119);
-  border-radius: 0.375rem;
-  width: 20rem;
-  height: 65vh;
-  transition: transform 0.3s ease-in-out;
-}
-
-.cardImage img:hover {
-  transform: scale(1.1);
 }
 
 .cardContent {
   border-radius: 0.375rem;
-  max-width: 100%;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0.115rem 0.1rem 0.1rem rgba(0, 0, 0, 0.7);
   flex: 1;
+  height: 55vh;
 }
 
-.card h2 {
-  font-size: 2rem;
-  color: #000;
-  margin-bottom: 2.5rem;
+.cardImage {
+  border-radius: 0.375rem;
+  height: 30vh;
+  width: 100%;
+}
+
+.cardImage img {
+  height: 40vh;
 }
 
 .card p {
   color: #000;
   padding: 0.175rem;
-
   margin: 0.3rem 0.5rem;
   text-align: left;
+}
+
+.cardContent button {
+  cursor: pointer;
+  border: none;
+  background-color: #051e4d;
+  color: #fff;
+  width: 5rem;
+  border-radius: 0.375rem;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+.cardContent input {
+  margin-top: 1rem;
+  width: 15vw;
+  gap: 0.5rem;
+  display: flex;
+  padding: 0.5rem;
+  justify-self: center;
+}
+
+.cardContent textarea {
+  width: 15vw;
+  height: 7vh;
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  justify-self: center;
+}
+
+.cardImageInput {
+  margin-top: 1rem;
+  width: 15vw;
+  gap: 0.5rem;
+  display: flex;
+  padding: 0.5rem;
+  justify-self: center;
 }

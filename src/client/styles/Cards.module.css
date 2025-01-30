@@ -40,7 +40,7 @@
 
 .card {
   border-radius: 0.375rem;
-  width: 50vw;
+  width: 55vw;
   height: 65vh;
   font-family: "Roboto", serif;
   background-color: #051e4d;
@@ -50,13 +50,13 @@
   display: flex;
   text-align: center;
   justify-content: space-evenly;
-  padding: 2rem 10rem;
+  padding: 2rem 12.5rem;
   gap: 4rem;
 }
 
 .cardImage {
   margin-left: auto;
-  width: 20rem;
+  width: auto;
   border-radius: 0.375rem;
 }
 
@@ -64,7 +64,7 @@
   gap: 4rem;
   box-shadow: 1px 1px 1px 3px rgba(255, 255, 255, 0.119);
   border-radius: 0.375rem;
-  width: 20rem;
+  width: 25vw;
   height: 65vh;
   transition: transform 0.3s ease-in-out;
 }
@@ -74,6 +74,7 @@
 }
 
 .cardContent {
+  overflow: auto;
   border-radius: 0.375rem;
   max-width: 100%;
   background-color: rgb(255, 255, 255);

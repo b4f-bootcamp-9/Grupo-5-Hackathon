@@ -1,8 +1,7 @@
-"use client"; // Marca o componente como cliente
+"use client";
 import { useState } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import styles from "../styles/Navbar.module.css";
 
 function Navbar() {
@@ -12,6 +11,16 @@ function Navbar() {
   const router = useRouter();
   const params = useSearchParams();
   const grupo = params.get("grupo");
+
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    router.push("/");
+  };
+
+  const handleEventsClick = (e) => {
+    e.preventDefault();
+    router.push("/events");
+  };
 
   return (
     <div className={styles.navbar}>
@@ -23,8 +32,9 @@ function Navbar() {
       {/* Links de navegação à direita */}
       <ul className={styles.navLinks}>
         <li className={styles.navItem}>
-          <Link
-            href="/card-details?localidade=&grupo=grupo5"
+          <a
+            href="/"
+            onClick={handleHomeClick}
             style={{
               color: grupo === "grupo5" ? "#000" : "#fff",
               backgroundColor: grupo === "grupo5" ? "#fff" : "",
@@ -34,8 +44,8 @@ function Navbar() {
               transition: "all 0.3s ease",
               ...(isHoveredHome
                 ? {
-                    color: "#f6a418", // Cor ao passar o mouse
-                    backgroundColor: "#333", // Fundo ao passar o mouse
+                    color: "#f6a418",
+                    backgroundColor: "#333",
                   }
                 : {}),
             }}
@@ -44,11 +54,12 @@ function Navbar() {
             onMouseLeave={() => setIsHoveredHome(false)}
           >
             Home
-          </Link>
+          </a>
         </li>
 
         <li className={styles.navItem}>
-          <Link
+          <a
+            onClick={handleEventsClick}
             href="/card-details?localidade=&grupo=grupo1"
             style={{
               color: grupo === "grupo1" ? "#000" : "#fff",
@@ -59,8 +70,8 @@ function Navbar() {
               transition: "all 0.3s ease",
               ...(isHoveredEventos
                 ? {
-                    color: "#f6a418", // Cor ao passar o mouse
-                    backgroundColor: "#444", // Fundo ao passar o mouse
+                    color: "#f6a418",
+                    backgroundColor: "#444",
                   }
                 : {}),
             }}
@@ -69,7 +80,7 @@ function Navbar() {
             onMouseLeave={() => setIsHoveredEventos(false)}
           >
             Eventos Geek
-          </Link>
+          </a>
         </li>
       </ul>
     </div>

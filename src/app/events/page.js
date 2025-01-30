@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import EventCards from "@/components/EventCards";
-import ModalAbout from "@/components/ModalAbout";
-import styles from "../styles/ModalAbout.module.css";
+import EventCards from "../../client/components/EventCards";
+import ModalAbout from "../../client/components/ModalAbout";
+import styles from "../../client/styles/ModalAbout.module.css";
 
 export default function EventsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);

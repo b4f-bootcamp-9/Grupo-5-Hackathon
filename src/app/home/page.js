@@ -1,10 +1,11 @@
-"use client"
-import HomePage from "@/components/HomePage";
+import Cards from "../../client/components/Cards";
+import SimpleSlider from "../../client/components/SimpleSlider";
 
-export default function Page() {
+export default function Home() {
   return (
     <div>
-      <HomePage />
+      <SimpleSlider />
+      <Cards />
     </div>
   );
 }

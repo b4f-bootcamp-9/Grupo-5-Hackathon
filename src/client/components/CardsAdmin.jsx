@@ -95,33 +95,12 @@ export default function EventCards() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const nextCard = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % events.length);
-  };
-
-  const prevCard = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? events.length - 1 : prevIndex - 1
-    );
-  };
-
   return (
     <div className={styles.cardContainer}>
-      <button className={styles.sliderButton} onClick={prevCard}>
-        {"<"}
-      </button>
       {events.length > 0 && (
         <div className={styles.card} key={events[currentIndex]._id}>
           {editingId === events[currentIndex]._id ? (
             <>
-              <input
-                type="text"
-                name="imagem"
-                value={formData.imagem}
-                onChange={handleInputChange}
-                className={styles.cardImageInput}
-                placeholder="Edite ImagemURL:"
-              />
               <div className={styles.cardContent}>
                 <input
                   type="text"
@@ -212,9 +191,6 @@ export default function EventCards() {
           )}
         </div>
       )}
-      <button className={styles.sliderButton} onClick={nextCard}>
-        {">"}
-      </button>
     </div>
   );
 }
